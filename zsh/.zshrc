@@ -62,7 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  aws brew bundler gem git git-extras history node npm nvm nvm-auto osx rails ruby rvm vagrant zsh-256color zsh-completions
+  aws brew bundler gem git git-extras history node npm nvm nvm-auto osx rails ruby rvm vagrant zsh-256color zsh-completions zsh-syntax-highlighting
 )
 
 # List of custom plugins used
@@ -93,7 +93,11 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# visual studio code launcher
+# VSCode
+# Usage: code . or code ~/.zshrc
+# Linux
+# alias code="/usr/bin/code"
+# Mac
 function code {
     if [[ $# = 0 ]]
     then
@@ -106,6 +110,7 @@ function code {
 }
 
 # cheat.sh shortcut
+# usage: cheatsh ruby
 function cheatsh {
     if [[ $# -eq 0 ]] ; then
         echo "Missing search term, try 'cheatsh ruby'"
@@ -114,8 +119,9 @@ function cheatsh {
     fi
 }
 
-# search in history
-function historyfind {
+# Search in history
+# Usage: hf cp
+function hf {
     if [[ $# -eq 0 ]] ; then
         echo "Missing search term, try 'historyfind git'"
     else
@@ -151,6 +157,12 @@ alias reload=". ~/.zshrc"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 
+# nvm
+# Linux with homebrew
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/nvm.sh"  # This loads nvm
+# [ -s "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/home/linuxbrew/.linuxbrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# Mac
 # nvm, non-brew variant
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -163,5 +175,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # ZSH completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# Syntax highlighting, disable if slower
-source /usr/local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+nvm_auto_switch

@@ -9,6 +9,7 @@
    1. [nvm-auto](https://github.com/dijitalmunky/nvm-auto)
    1. [zsh-256color](https://github.com/chrissicool/zsh-256color)
    1. [zsh-completions](https://github.com/zsh-users/zsh-completions)
+   1. [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
 
 ### Custom features
 
@@ -21,11 +22,10 @@
    1. `cheatsh ruby/Array`
    1. `cheatsh ruby/Hash`
 1. historyfind, find any command usage in entire ZSH history
-   Usage: `historyfind ssh`
+   Usage: `hf ssh`
 1. Quick aliases
    1. Update pre-defined aliases to your own folder structure
    1. Then simply type alias in terminal to perform that action
-   1. Example `izumi` to change directory to **Izumi** project folder.
 1. [Lazy Git](https://github.com/jesseduffield/lazygit), a custom Git GUI for terminal
    1. Install via homebrew `brew install lazygit`
    1. Alias is already defined, so just type `lg` in `clio` project folder
